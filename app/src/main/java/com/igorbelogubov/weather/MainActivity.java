@@ -108,10 +108,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                                 mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
                                 m.showInfoWindow();
                             }
+                            Log.e(TAG, String.valueOf(weatherData));
                         },
                         throwable -> {
                             Toast.makeText(this, "Error", Toast.LENGTH_LONG).show();
-                            Log.e(TAG, "Error");
+                            Log.e(TAG, "Error: " + String.valueOf(throwable));
                         });
     }
 }
